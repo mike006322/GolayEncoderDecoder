@@ -32,12 +32,12 @@ def make_extended_Golay_generator():
         next_line = next_line + [next_line.pop(0)]
         B.append(next_line)
     j = [[1]*11]
-    G = np.concatenate((np.array(B), np.array(j)))
+    G_extended = np.concatenate((np.array(B), np.array(j)))
     j_0 = [[1]]*11 + [[0]]
-    G = np.concatenate((np.array(G), np.array(j_0)), axis=1)
+    G_extended = np.concatenate((np.array(G_extended), np.array(j_0)), axis=1)
     Id_12 = make_identity_matrix(12)
-    G = np.concatenate((Id_12, np.array(G)), axis=1)
-    return G
+    G_extended = np.concatenate((Id_12, np.array(G_extended)), axis=1)
+    return G_extended
 
 
 G_extended = np.array([[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1],
