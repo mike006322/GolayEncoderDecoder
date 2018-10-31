@@ -72,14 +72,14 @@ def encode_extended_Golay(info):
 
     if type(info) == str:
         info = [int(i) for i in info]
-        res = info @ G % 2
+        res = info @ G_extended % 2
         return ''.join(str(i) for i in res)
 
     if type(info) == list:
-        return list(info @ G % 2)
+        return list(info @ G_extended % 2)
 
     if type(info) == np.ndarray:
-        return info @ G % 2
+        return info @ G_extended % 2
 
 def encode_Golay(info):
     global G
